@@ -4,16 +4,41 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
         }
         .container {
-            max-width: 600px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 20px;
         }
+        h2 {
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
         .button {
-            padding: 10px 20px;
-            font-size: 16px;
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
             cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background: #0056b3;
         }
     </style>
 </head>
@@ -22,16 +47,26 @@
         <h2>アンケートフォーム</h2>
         <form id="surveyForm">
             <p>サービスに対する満足度を選択してください:</p>
-            <input type="radio" id="verySatisfied" name="satisfaction" value="verySatisfied">
-            <label for="verySatisfied">非常に満足</label><br>
-            <input type="radio" id="satisfied" name="satisfaction" value="satisfied">
-            <label for="satisfied">満足</label><br>
-            <input type="radio" id="neutral" name="satisfaction" value="neutral">
-            <label for="neutral">どちらでもない</label><br>
-            <input type="radio" id="dissatisfied" name="satisfaction" value="dissatisfied">
-            <label for="dissatisfied">不満</label><br>
-            <input type="radio" id="veryDissatisfied" name="satisfaction" value="veryDissatisfied">
-            <label for="veryDissatisfied">非常に不満</label><br><br>
+            <label>
+                <input type="radio" id="verySatisfied" name="satisfaction" value="verySatisfied">
+                非常に満足
+            </label>
+            <label>
+                <input type="radio" id="satisfied" name="satisfaction" value="satisfied">
+                満足
+            </label>
+            <label>
+                <input type="radio" id="neutral" name="satisfaction" value="neutral">
+                どちらでもない
+            </label>
+            <label>
+                <input type="radio" id="dissatisfied" name="satisfaction" value="dissatisfied">
+                不満
+            </label>
+            <label>
+                <input type="radio" id="veryDissatisfied" name="satisfaction" value="veryDissatisfied">
+                非常に不満
+            </label>
             <input type="submit" value="送信" class="button">
         </form>
     </div>
@@ -41,7 +76,7 @@
             event.preventDefault();
             var satisfaction = document.querySelector('input[name="satisfaction"]:checked').value;
             if (satisfaction === 'verySatisfied' || satisfaction === 'satisfied') {
-                window.location.href = 'https://bit.ly/46YSoDi'; // Google口コミページのURLに置き換えてください
+                window.location.href = 'https://bit.ly/46YSoDi'; // 適切なURLに置き換えてください
             } else {
                 alert('ご回答ありがとうございます！');
             }
